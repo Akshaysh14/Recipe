@@ -1,0 +1,94 @@
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <ol>
+        <li>Add a button which says 'Display Details'</li>
+        <li>Add a paragraph with any content of your choice (e.g. 'Secret Password = tuna')</li>
+        <li>Toggle the displaying of that paragraph with the button created in the first step</li>
+        <li>Log all button clicks in an array and output that array below the secret paragraph (maybe log a timestamp or simply an incrmenting number)</li>
+        <li>Starting at the 5th log item, give all future log items a blue background (via ngStyle) and white color (ngClass)</li>
+      </ol>
+      <hr> -->
+<!-- <button class="btn btn-primary" (click)="showSecret = !showSecret">Display Details</button> -->
+<!-- <button class="btn btn-primary" (click)="onToggleDetails()">Display Details</button>
+      <p *ngIf="showSecret">Secret Password = tuna</p>
+      <div *ngFor="let logItem of log" [ngStyle]="{backgroundColor: logItem >=5 ? 'blue' : 'transparent'}" [ngClass]="{'white-text': logItem >= 5}">{{ logItem }}</div>
+
+      <br><br>
+
+      <button class="btn btn-primary" (click)="onToggleDetails2()">Display Details</button>
+      <p *ngIf="showSecret2">Secret Password = tuna</p>
+      <div *ngFor="let log2Item of log2; let i =index" [ngStyle]="{backgroundColor: log2Item >=4 ? 'blue' : 'transparent'}" [ngClass]="{'white-text': log2Item >= 4}">{{ log2Item }}</div>
+    </div>
+  </div>
+</div> -->
+<app-header (featureSelected)="onNavigate($event)"></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes>
+      <app-shopping-list *ngIf="loadedFeature !== 'recipe'"></app-shopping-list>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>My Servers</h2>
+      <button class="btn btn-primary" (click)="onAddServer()">Add Server</button>
+      <br><br>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let server of servers; let i = index" (click)="onRemoveServer(i)">{{ server }}</li>
+      </ul>
+    </div>
+  </div>
+</div> -->
+
+<!-- Module Introduction -->
+
+<!-- <div class="container">
+  <app-cockpit (serverCreated)="onServerAdded($event)" (bpCreated)="onBlueprintAdded($event)"></app-cockpit>
+  <hr>
+  <div class="row">
+    <div class="col-sm-12">
+      <button class="btn btn-primary" (click)="onChangeFirst()">Change first element</button>
+      <button class="btn btn-danger" (click)="onDestroyFirst()">Destroy first component</button>
+      <app-server-element *ngFor="let serverElement of serverElements" [srvElement]="serverElement" [name]="serverElement.name">
+        <p #contentParagraph>
+          <strong *ngIf="serverElement.type === 'server'" style="color: red;">{{ serverElement.content }}</strong>
+          <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
+        </p>
+      </app-server-element>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h3>Bind it!</h3>
+      <ol>
+        <li>Create three new components: GameControl, Odd and even</li>
+        <li>The GameControl Component should have buttons to start and stop the game</li>
+        <li>When starting the game, an event (holding a incrementing number) should get emitted each second (ref = setInterval())</li>
+        <li>The event should be listenable from outside the component</li>
+        <li>When stopping the game, no more events should get emitted (clearInterval(ref))</li>
+        <li>A new odd component should get created for every odd number emitted, the same should happen for the Even Component(on even numbers)</li>
+        <li>Simply output Odd - NUMBER or Even - NUMBER in the two components</li>
+        <li>Style the element (e.g. paragraph) holding your output text differently in both components</li>
+      </ol>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <app-game-control (intervalFired)="onIntervalFired($event)"></app-game-control>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <app-odd *ngFor="let oddNumber of oddNumbers" [number]="oddNumber"></app-odd>
+      <app-even *ngFor="let evenNumber of evenNumbers" [number]="evenNumber"></app-even>
+    </div>
+  </div>
+</div> -->
